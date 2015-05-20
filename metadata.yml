@@ -1,0 +1,35 @@
+# file: metadata.yml
+
+---
+name:phasing analysis 
+version: 0.1 
+type: query
+main_module: main.py
+url: http://mpss.udel.edu/
+description: Phasing information of a window;list of reads and phasing data for a window 
+whitelist:
+  - mpss.udel.edu
+validate_request: true
+endpoints:
+  /search:
+    summary: Phasing information of a window;list of reads and phasing data for a window 
+    description: Phasing analysis data 
+    parameters:
+      - name: chromosome
+        description: Chromosome
+        type: string
+        required: true
+        enum:
+          -chrnum 
+      - name: window 
+        description: Window 
+        type: string
+        required: true
+        enum:
+          - win_beg 
+      - name: list
+	description: List
+	type: string
+	required: true
+	enum:
+	  - strand    
