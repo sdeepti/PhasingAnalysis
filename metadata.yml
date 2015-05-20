@@ -12,7 +12,7 @@ whitelist:
 validate_request: true
 endpoints:
   /search:
-    summary: Phasing information of a window;list of reads and phasing data 
+    summary: Phasing information of a window & list of reads and phasing data 
     description: Phasing analysis data 
     parameters:
       - name: chrnum 
