@@ -1,7 +1,7 @@
 # file: metadata.yml
 
 ---
-name:phasing analysis 
+name: phasing analysis 
 version: 0.1 
 type: query
 main_module: main.py
@@ -12,24 +12,21 @@ whitelist:
 validate_request: true
 endpoints:
   /search:
-    summary: Phasing information of a window;list of reads and phasing data for a window 
+    summary: Phasing information of a window;list of reads and phasing data 
     description: Phasing analysis data 
     parameters:
-      - name: chromosome
+      - name: chrnum 
         description: Chromosome
         type: string
         required: true
-        enum:
-          -chrnum 
-      - name: window 
-        description: Window 
+      - name: win_beg 
+        description: Window begin
         type: string
         required: true
-        enum:
-          - win_beg 
-      - name: list
-	description: List
+      - name: strand
+	description: Strand 
 	type: string
 	required: true
 	enum:
-	  - strand    
+	  - w
+	  - c 
