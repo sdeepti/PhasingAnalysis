@@ -24,9 +24,9 @@ endpoints:
         type: string
         required: true
       - name: strand
-	description: Strand 
-	type: string
-	required: true
-	enum:
-	  - w
-	  - c 
+        description: Strand 
+        type: string
+        required: true
+        enum:
+          - w
+          - c 
