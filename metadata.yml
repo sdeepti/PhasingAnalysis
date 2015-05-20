@@ -2,7 +2,7 @@
 
 ---
 name: phasing_analysis 
-version: 0.3
+version: 0.4
 type: query
 main_module: main.py
 url: http://mpss.udel.edu/
