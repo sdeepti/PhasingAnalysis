@@ -1,7 +1,7 @@
 # file: metadata.yml
 
 ---
-name: phasing analysis 
+name: phasing_analysis 
 version: 0.1 
 type: query
 main_module: main.py
