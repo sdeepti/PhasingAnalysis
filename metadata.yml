@@ -6,7 +6,7 @@ version: 0.1
 type: query
 main_module: main.py
 url: http://mpss.udel.edu/
-description: Phasing information of a window;list of reads and phasing data for a window 
+description: Phasing information of a window & list of reads and phasing data for a window 
 whitelist:
   - mpss.udel.edu
 validate_request: true
