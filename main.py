@@ -22,13 +22,11 @@ def search(arg):
 
     # Expect JSON argument like this python command.
     # Example:
-    # main.search({'chrnum':'chr','win_beg':'beg','strand':'str'})
+    # main.search({'chr':i_chr,'beg':i_beg,'str':i_str})
     # That equates to this URL.
-    # 'https://mpss.udel.edu/web/php/pages/PAinfo.php?SITE=at_sRNA&format=json&chrnum=6&win_beg=10&strand=w&list=phasing_window'
+    # 'http://mpss.udel.edu/web/php/pages/PAinfo.php?SITE=at_sRNA&format=json&chrnum=6&win_beg=10&strand=w&list=phasing_window'
     # The remote service takes additional parameters that we will pass from input args
-    pw_url = ('http://mpss.udel.edu/web/php/pages/PAinfo.php?SITE=at_sRNA'
-           '&chrnum={chr}&win_beg={beg}&strand={str}&format=json&list=phasing_window'
-           .format(chr=i_chr, beg=i_beg, str=i_str))
+    pw_url = ('http://mpss.udel.edu/web/php/pages/PAinfo.php?SITE=at_sRNA&chrnum={chr}&win_beg={beg}&strand={str}&format=json&list=phasing_window'.format(chr=i_chr, beg=i_beg, str=i_str))
 
     print pw_url
     rqst = requests.get(pw_url)
@@ -48,13 +46,11 @@ def search(arg):
 
     # Expect JSON argument like this python command.
     # Example:
-    # main.search({'chrnum':'chr','win_beg':'beg','strand':'str'})
+    # main.search({'chr':i_chr,'beg':i_beg,'str':i_str})
     # That equates to this URL.
-    # 'https://mpss.udel.edu/web/php/pages/PAinfo.php?SITE=at_sRNA&format=json&chrnum=6&win_beg=10&strand=w&list=phasing_analysis'
+    # 'http://mpss.udel.edu/web/php/pages/PAinfo.php?SITE=at_sRNA&format=json&chrnum=6&win_beg=10&strand=w&list=phasing_analysis'
     # The remote service takes additional parameters that we will pass from input args
-    pa_url = ('http://mpss.udel.edu/web/php/pages/PAinfo.php?SITE=at_sRNA'
-           '&chrnum={chr}&win_beg={beg}&strand={str}&format=json&list=phasing_analysis'
-           .format(chr=i_chr, beg=i_beg, str=i_str))
+    pa_url = ('http://mpss.udel.edu/web/php/pages/PAinfo.php?SITE=at_sRNA&chrnum={chr}&win_beg={beg}&strand={str}&format=json&list=phasing_analysis'.format(chr=i_chr, beg=i_beg, str=i_str))
 
     print pa_url
     rqst = requests.get(pa_url)
