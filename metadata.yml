@@ -27,6 +27,3 @@ endpoints:
         description: Strand 
         type: string
         required: true
-        enum:
-          - w
-          - c
