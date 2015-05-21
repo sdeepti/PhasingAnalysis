@@ -16,9 +16,9 @@ def search(arg):
     # The output may be ordered differently than the input.
     # In particular, the "sequence" tuple may be buried in the list.
 
-    chrnum = arg['chrnum']
-    win_beg = arg['win_beg']
-    strand = arg['strand']
+    i_chr = arg['chr']
+    i_beg = arg['beg']
+    i_str = arg['str']
 
     # Expect JSON argument like this python command.
     # Example:
@@ -28,7 +28,7 @@ def search(arg):
     # The remote service takes additional parameters that we will pass from input args
     url = ('http://mpss.udel.edu/web/php/pages/PAinfo.php?SITE=at_sRNA'
            '&chrnum={chr}&win_beg={beg}&strand={str}&format=json&list=phasing_window'
-           .format(chr=chrnum, beg=win_beg, str=strand))
+           .format(chr=i_chr, beg=i_beg, str=i_str))
 
     print url
     rqst = requests.get(url)
