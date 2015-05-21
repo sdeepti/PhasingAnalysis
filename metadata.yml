@@ -15,15 +15,15 @@ endpoints:
     summary: Phasing information of a window & list of reads and phasing data 
     description: Phasing analysis data 
     parameters:
-      - name: chr
+      - name: chrnum
         description: Chromosome
         type: string
         required: true
-      - name: beg 
+      - name: win_beg 
         description: Window begin
         type: string
         required: true
-      - name: str
+      - name: strand
         description: Strand 
         type: string
         required: true
