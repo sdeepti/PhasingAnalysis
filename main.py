@@ -26,12 +26,12 @@ def search(arg):
     # That equates to this URL.
     # 'https://mpss.udel.edu/web/php/pages/PAinfo.php?SITE=at_sRNA&format=json&chrnum=6&win_beg=10&strand=w&list=phasing_window'
     # The remote service takes additional parameters that we will pass from input args
-    url = ('http://mpss.udel.edu/web/php/pages/PAinfo.php?SITE=at_sRNA'
+    pw_url = ('http://mpss.udel.edu/web/php/pages/PAinfo.php?SITE=at_sRNA'
            '&chrnum={chr}&win_beg={beg}&strand={str}&format=json&list=phasing_window'
            .format(chr=i_chr, beg=i_beg, str=i_str))
 
-    print url
-    rqst = requests.get(url)
+    print pw_url
+    rqst = requests.get(pw_url)
 
     # If the response status is not 2xx, raise an exception with the
     # proper error message
@@ -52,12 +52,12 @@ def search(arg):
     # That equates to this URL.
     # 'https://mpss.udel.edu/web/php/pages/PAinfo.php?SITE=at_sRNA&format=json&chrnum=6&win_beg=10&strand=w&list=phasing_analysis'
     # The remote service takes additional parameters that we will pass from input args
-    url = ('http://mpss.udel.edu/web/php/pages/PAinfo.php?SITE=at_sRNA'
+    pa_url = ('http://mpss.udel.edu/web/php/pages/PAinfo.php?SITE=at_sRNA'
            '&chrnum={chr}&win_beg={beg}&strand={str}&format=json&list=phasing_analysis'
-           .format(chr=chrnum, beg=win_beg, str=strand))
+           .format(chr=i_chr, beg=i_beg, str=i_str))
 
-    print url
-    rqst = requests.get(url)
+    print pa_url
+    rqst = requests.get(pa_url)
 
     # If the response status is not 2xx, raise an exception with the
     # proper error message
@@ -72,7 +72,11 @@ def search(arg):
     except ValueError:
         raise Exception('Could not decode the phasing_window JSON object')
 
-    final_payload_json = {'phasing_window': pw_payload['phasing_window'], 'phasing_analysis': pa_payload['phasing_analysis']}
+    final_payload_json = {'phasing_window_url': pw_url,
+			'phasing_window': pw_payload['phasing_window'], 
+			'phasing_analysis_url': pa_url,
+			'phasing_analysis': pa_payload['phasing_analysis']}
+
     payload = json.dumps(final_payload_json)
     print payload
     print '---'
